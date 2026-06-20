@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,165 +7,76 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    
     <header>
-        <a href="#home"><strong>StudyHive</strong></a>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
         <nav>
-            <a href="#home">Home</a> | 
-            <a href="#about">About</a> | 
-            <a href="#subjects">Dashboard</a> | 
-            <a href="#chat">Live Chat</a> | 
-            <a href="#profile">Profile</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html">Profile</a>
         </nav>
     </header>
 
-    <hr>
+    <main>
+        <section class="hero hero-home">
+            <div>
+                <span class="eyebrow">Learn together, stay motivated</span>
+                <h1>StudyHive helps your team stay on target with live rooms and smart progress tracking.</h1>
+                <p>From study sessions to subject dashboards, our layout keeps every learning path visible and simple.</p>
+                <div class="hero-actions">
+                    <a href="subjects.html"><button type="button">Open Dashboard</button></a>
+                    <button type="button" data-modal-target="#tourModal">Quick tour</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <h2>4 Active Rooms</h2>
+                    <p>Collaborate in focused subject groups with shared goals and live updates.</p>
+                </div>
+                <div class="hero-card">
+                    <h2>Progress tracking</h2>
+                    <p>Use HTML5 meters and local storage to keep goals visible across visits.</p>
+                </div>
+            </div>
+        </section>
 
-    
-    <main id="home">
-        <section>
-            <h1>Sync Up & Study Smarter.</h1>
-            <p>Escape isolation. Join targeted, live peer groups matching your exact courses and clear exams together with structural accountability.</p>
-            <p>
-                <a href="#subjects"><button type="button">Explore Subjects</button></a>
-            </p>
+        <section class="feature-grid">
+            <article>
+                <h2>Collaborative study planning</h2>
+                <p>Keep every subject, session, and group review on track so your study team can move forward together.</p>
+            </article>
+            <article>
+                <h2>Clear subject progress</h2>
+                <p>Track course milestones and room activity in a compact dashboard designed for faster preparation.</p>
+            </article>
+            <article>
+                <h2>Smart study support</h2>
+                <p>Save goals, share quick updates, and keep important session details visible during every review.</p>
+            </article>
+        </section>
+
+        <section class="home-rows">
+            <article>
+                <h2>Study group excellence</h2>
+                <p>Join sessions that mix accountability, discussion, and quick review so your study time is efficient.</p>
+            </article>
+            <article>
+                <h2>Designed for learners</h2>
+                <p>StudyHive keeps your path clear with easy access to subjects, rooms, and progress checkpoints.</p>
+            </article>
         </section>
     </main>
 
-    <hr>
-
-   
-    <section id="about">
-        <h2>Why StudyHive?</h2>
-        <p>We build environments modeled around real-time performance and absolute collaboration.</p>
-        
-        <ul>
-            <li>
-                <h3>Peer Matching</h3>
-                <p>Connect natively with classmates worldwide taking identical courses or test prep criteria.</p>
-            </li>
-            <li>
-                <h3>Structured Rooms</h3>
-                <p>Utilize text synchronization, integrated shared notes, and live focus pipelines.</p>
-            </li>
-            <li>
-                <h3>Accountability Metrics</h3>
-                <p>Track global sync-hours, handle attendance goals, and peer ratings to lock focus.</p>
-            </li>
-        </ul>
-    </section>
-
-    <hr>
-
-   
-    <section id="subjects">
-        <h2>Your Subjects Dashboard</h2>
-        <p>Track individual course rooms and current learning target timelines.</p>
-        
-       
-        <article>
-            <p><strong>Category: Computer Science</strong></p>
-            <h3>Advanced Data Structures</h3>
-            <p>Next Session: Today, 7:00 PM</p>
-            <p>Current Progress Level: 75% completed</p>
-            <p>
-                <a href="#chat"><button type="button">Enter Live Chat</button></a>
-            </p>
-        </article>
-
-        
-        <article>
-            <p><strong>Category: Sciences</strong></p>
-            <h3>Organic Chemistry II</h3>
-            <p>Next Session: Tomorrow, 4:30 PM</p>
-            <p>Current Progress Level: 40% completed</p>
-            <p>
-                <a href="#chat"><button type="button">Enter Live Chat</button></a>
-            </p>
-        </article>
-
-        
-        <article>
-            <p><strong>Category: Mathematics</strong></p>
-            <h3>Calculus II: Integrals</h3>
-            <p>Next Session: Friday, 2:00 PM</p>
-            <p>Current Progress Level: 90% completed</p>
-            <p>
-                <a href="#chat"><button type="button">Enter Live Chat</button></a>
-            </p>
-        </article>
-    </section>
-
-    <hr>
-
-    
-    <section id="chat">
-        <h2>Live Group Chat Room</h2>
-        <p>Collaborating Room: Advanced Data Structures</p>
-
-        
-        <aside>
-            <h4>Active Peers (3)</h4>
-            <ul>
-                <li>Active: Jude Chowri (You)</li>
-                <li>Active: Jack </li>
-                <li>Active: Dean Winchester</li>
-            </ul>
-        </aside>
-
-        
-        <div>
-            <div>
-                <p>
-                    <small>Dean • 10:14 AM</small><br>
-                    Hey squad! Did everyone wrap up the balance trees practice sheet yet?
-                </p>
-                <p>
-                    <small>Jack • 10:15 AM</small><br>
-                    Mostly, but I am still hitting walls handling rotations on AVL deletion nodes.
-                </p>
-                <p>
-                    <small>You • 10:17 AM</small><br>
-                    I have a simplified cheat sheet chart on rotations. Pasting the summary logic here now!
-                </p>
-            </div>
-
-            
-            <form action="#" method="get">
-                <input type="text" name="message" placeholder="Type an update to your study squad..." required>
-                <button type="submit">Send</button>
-            </form>
+    <div class="modal" id="tourModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="tourTitle" aria-describedby="tourDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="tourTitle">Welcome to StudyHive</h3>
+            <p id="tourDescription">Browse the Dashboard for subject progress, the Live Chat for team discussions, and Profile to save goals and location status.</p>
+            <p><a href="about.html"><button type="button">Learn more</button></a></p>
         </div>
-    </section>
+    </div>
 
-    <hr>
-
-    
-    <section id="profile">
-        <h2>Student Profile</h2>
-        <p>Manage public accountability stats and match targets.</p>
-
-        <div>
-            <h3>Jude Chowri</h3>
-            <p>Undergraduate Student | CS Major</p>
-            <p><strong>Email Address:</strong> jude.chowri@university.edu</p>
-
-            <ul>
-                <li><strong>Study Performance Rating:</strong> 4.9 / 5</li>
-                <li><strong>Total Classroom Hours Synced:</strong> 42 hours</li>
-                <li><strong>Active Squad Groups Linked:</strong> 3 Rooms</li>
-            </ul>
-
-            <h4>Verified Subjects of Interest</h4>
-            <ul>
-                <li>Algorithms</li>
-                <li>Java</li>
-                <li>Calculus I</li>
-                <li>Python Architecture</li>
-            </ul>
-        </div>
-    </section>
-
+    <script src="script.js"></script>
 </body>
 </html>

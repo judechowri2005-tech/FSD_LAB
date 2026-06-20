@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html" class="active">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-profile">
+            <div>
+                <span class="eyebrow">Personal study profile</span>
+                <h1>Keep your learning stats, goals, and location-aware check-ins in one place.</h1>
+                <p>Use StudyHive tools to store your current goal, review progress, and capture active study location.</p>
+            </div>
+            <div class="profile-summary">
+                <h3>Jude Chowri</h3>
+                <p>CS Major — Active Learner</p>
+                <p><strong>Email:</strong> jude.chowri@university.edu</p>
+            </div>
+        </section>
+
+        <section class="profile-grid">
+            <article>
+                <h2>Goals & progress</h2>
+                <p>Weekly completion</p>
+                <progress value="82" max="100">82%</progress>
+            </article>
+            <article>
+                <h2>Saved Goal</h2>
+                <p id="savedGoalText">No goal set yet.</p>
+            </article>
+            <article class="study-zone-card">
+                <h2>Study zone</h2>
+                <p id="locationStatus">Waiting for your location…</p>
+                <button type="button" id="locateButton">Share my study location</button>
+            </article>
+        </section>
+
+        <section class="profile-actions">
+            <form id="bioForm">
+                <label for="bioText">Update study profile note</label>
+                <textarea id="bioText" name="bioText" rows="4" placeholder="Add a note about your focus plan..."></textarea>
+                <button type="submit">Save profile note</button>
+            </form>
+            <div class="bio-preview">
+                <h3>Latest note</h3>
+                <p id="bioPreview">No note saved yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="locationModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="locationTitle" aria-describedby="locationDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="locationTitle">Study Location</h3>
+            <p id="locationDescription">If you allow location access, StudyHive can show your current study area and save it for your profile.</p>
+            <p><button type="button" data-modal-close>Okay</button></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

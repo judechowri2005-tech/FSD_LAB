@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html" class="active">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-dashboard">
+            <div>
+                <span class="eyebrow">Your weekly study grid</span>
+                <h1>Organize sessions with subject cards, time blocks, and progress goals.</h1>
+                <p>Grid-based tracking keeps every scheduled session visible at a glance.</p>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <h3>6 Sessions</h3>
+                    <p>Planned this week</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3 Active Rooms</h3>
+                    <p>Available now</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="subject-grid" aria-label="Study subjects grid">
+            <article>
+                <h2>Advanced Data Structures</h2>
+                <p>Session: Today 7:00 PM</p>
+                <p>Progress: <meter min="0" max="100" value="75">75%</meter></p>
+                <button type="button" data-modal-target="#subjectModal">View details</button>
+            </article>
+            <article>
+                <h2>Operating Systems II</h2>
+                <p>Session: Tomorrow 4:30 PM</p>
+                <p>Progress: <meter min="0" max="100" value="40">40%</meter></p>
+                <button type="button" data-modal-target="#subjectModal">View details</button>
+            </article>
+            <article>
+                <h2>Algorithms &amp; Complexity</h2>
+                <p>Session: Friday 2:00 PM</p>
+                <p>Progress: <meter min="0" max="100" value="90">90%</meter></p>
+                <button type="button" data-modal-target="#subjectModal">View details</button>
+            </article>
+            <article>
+                <h2>Machine Learning Systems</h2>
+                <p>Session: Saturday 5:00 PM</p>
+                <p>Progress: <meter min="0" max="100" value="55">55%</meter></p>
+                <button type="button" data-modal-target="#subjectModal">View details</button>
+            </article>
+        </section>
+
+        <section class="schedule-grid">
+            <div>
+                <h2>Today&apos;s Study Blocks</h2>
+                <ul>
+                    <li>6:00 PM — Algorithm review</li>
+                    <li>7:30 PM — Group problem solving</li>
+                    <li>9:00 PM — Summary notes & quiz prep</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Personal Focus</h2>
+                <p>Use the balloon scheduler and save your progress in local storage. Your latest goal remains available when you return.</p>
+                <form id="goalForm">
+                    <label for="goalText">Set a study goal</label>
+                    <input id="goalText" name="goalText" type="text" placeholder="Finish a practice exam" required>
+                    <button type="submit">Save goal</button>
+                </form>
+                <p class="saved-goal" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="subjectModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="subjectTitle" aria-describedby="subjectDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="subjectTitle">Subject Session Details</h3>
+            <p id="subjectDescription">Each subject card offers a session summary, progress tracker, and a direct link back to your chat room.</p>
+            <p><a href="chat.html"><button type="button">Open Live Chat</button></a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

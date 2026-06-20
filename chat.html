@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — Live Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html" class="active">Live Chat</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-chat">
+            <div>
+                <span class="eyebrow">Study together in real time</span>
+                <h1>Live chat, shared audio clips, and group check-ins keep every session connected.</h1>
+                <p>Use chat notes, quick audio reminders, and action items to stay aligned with your study squad.</p>
+            </div>
+            <div class="chat-hero-card">
+                <h3>Current Room</h3>
+                <p>Advanced Data Structures</p>
+                <button type="button" data-modal-target="#rulesModal">Room Rules</button>
+            </div>
+        </section>
+
+        <section class="chat-layout">
+            <aside>
+                <h4>Active Peers</h4>
+                <ul>
+                    <li>Jude (You)</li>
+                    <li>Jack</li>
+                    <li>Dean</li>
+                    <li>Amara</li>
+                </ul>
+                <audio controls>
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </aside>
+
+            <section class="chat-main">
+                <div class="chat-box" id="chatBox" aria-live="polite">
+                    <article>
+                        <small>Dean • 10:14 AM</small>
+                        <p>Hey squad! Did everyone wrap up the balance trees practice sheet yet?</p>
+                    </article>
+                    <article>
+                        <small>Jack • 10:15 AM</small>
+                        <p>Mostly, but I am still hitting walls handling rotations on AVL deletion nodes.</p>
+                    </article>
+                    <article>
+                        <small>You • 10:17 AM</small>
+                        <p>I have a simplified cheat sheet chart on rotations. Pasting the summary logic here now!</p>
+                    </article>
+                </div>
+
+                <form id="chatForm">
+                    <label for="chatMessage">Send an update</label>
+                    <input id="chatMessage" name="chatMessage" type="text" placeholder="Type your message..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <div class="modal" id="rulesModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="rulesTitle" aria-describedby="rulesDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="rulesTitle">Room Rules</h3>
+            <p id="rulesDescription">Keep updates concise, answer questions respectfully, and share study resources in the pinned notes section.</p>
+            <p><button type="button" data-modal-close>Close</button></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

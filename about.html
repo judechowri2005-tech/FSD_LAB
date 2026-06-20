@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-about">
+            <div>
+                <span class="eyebrow">Built for active learners</span>
+                <h1>Collaborate with focus, timing, and tools that scale.</h1>
+                <p>StudyHive blends study planning, group accountability, and real-time collaboration into one modern learning hub.</p>
+                <button type="button" data-modal-target="#communityModal">See Our Community</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Students working together">
+            </div>
+        </section>
+
+        <section class="feature-grid">
+            <article>
+                <h2>Study sessions simplified</h2>
+                <p>StudyHive organizes your course review, meeting times, and group efforts in one easy-to-scan layout.</p>
+            </article>
+            <article>
+                <h2>Clear peer collaboration</h2>
+                <p>Bring classmates together with shared check-ins, session details, and easy access to your current room.</p>
+            </article>
+            <article>
+                <h2>Connected study workflow</h2>
+                <p>Track sessions, chat with peers, and keep study progress visible in one connected flow.</p>
+            </article>
+        </section>
+
+        <section class="story-row">
+            <div>
+                <h2>Why StudyHive works</h2>
+                <p>We pair learning science with community-driven accountability. That means faster review cycles, better retention, and a clearer path to exam readiness.</p>
+            </div>
+            <div>
+                <ul>
+                    <li>Real-time session rooms</li>
+                    <li>Peer-matched subject teams</li>
+                    <li>Shared note and preparation links</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="communityModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="communityTitle" aria-describedby="communityDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="communityTitle">StudyHive Community</h3>
+            <p id="communityDescription">Join flexible, small-group study sessions with live chat, shared files, and progress badges. Tap below to return to your dashboard and open a room.</p>
+            <p><a href="subjects.html"><button type="button">Go to Dashboard</button></a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
