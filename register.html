@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html">Profile</a>
+            <a href="register.html" class="active">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-register">
+            <div>
+                <span class="eyebrow">Create a simple study account</span>
+                <h1>Registration</h1>
+                <p>Fill in each field, choose a date and file, then submit to display all entries instantly.</p>
+            </div>
+        </section>
+
+        <section class="register-form-area">
+            <form id="registerForm">
+                <label for="fullName">Full name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+                <label for="dob">Date of birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="profilePhoto">Profile photo</label>
+                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+
+                <label for="userRole">Study role</label>
+                <select id="userRole" name="userRole" required>
+                    <option value="" disabled selected>Select a role</option>
+                    <option value="Student">Student</option>
+                    <option value="Tutor">Tutor</option>
+                    <option value="Mentor">Mentor</option>
+                    <option value="Guest">Guest</option>
+                </select>
+
+                <button type="submit">Submit registration</button>
+            </form>
+
+            <div class="result-card" id="resultCard" hidden>
+                <h2>Registration preview</h2>
+                <div id="resultContent"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const resultCard = document.getElementById('resultCard');
+        const resultContent = document.getElementById('resultContent');
+
+        const showResult = event => {
+            event.preventDefault();
+            const fileInput = document.getElementById('profilePhoto');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file selected';
+
+            const values = {
+                name: document.getElementById('fullName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                password: document.getElementById('password').value ? '●●●●●●●' : 'None',
+                dob: document.getElementById('dob').value,
+                photo: fileName,
+                role: document.getElementById('userRole').value
+            };
+
+            resultContent.innerHTML = `
+                <p><strong>Name:</strong> ${values.name}</p>
+                <p><strong>Email:</strong> ${values.email}</p>
+                <p><strong>Password:</strong> ${values.password}</p>
+                <p><strong>Date of birth:</strong> ${values.dob}</p>
+                <p><strong>Profile photo:</strong> ${values.photo}</p>
+                <p><strong>Role:</strong> ${values.role}</p>
+            `;
+
+            resultCard.hidden = false;
+        };
+
+        registerForm.addEventListener('submit', showResult);
+    </script>
+</body>
+</html>

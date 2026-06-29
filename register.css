@@ -1,0 +1,96 @@
+:root {
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --border-soft: rgba(15, 62, 110, 0.12);
+}
+
+body {
+    background: linear-gradient(180deg, #f4f8ff 0%, #e9f3ff 100%);
+}
+
+.hero-register {
+    padding: 2rem 1.5rem 1.5rem;
+    background: var(--surface);
+    border-radius: 1.25rem;
+    margin: 1.5rem auto;
+    max-width: 900px;
+    box-shadow: var(--shadow);
+}
+
+.register-form-area {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+#registerForm {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 1rem;
+    background: var(--card-bg);
+}
+
+#registerForm label {
+    font-weight: 600;
+    color: #102a43;
+}
+
+#registerForm input,
+#registerForm select,
+#registerForm button {
+    width: 100%;
+}
+
+#registerForm input,
+#registerForm select {
+    border: 1px solid var(--border-soft);
+    border-radius: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: #fff;
+}
+
+#registerForm button {
+    margin-top: 0.5rem;
+    border-radius: 0.85rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.95rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#registerForm button:hover {
+    background: var(--primary-dark);
+}
+
+.result-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow);
+}
+
+.result-card h2 {
+    margin-top: 0;
+}
+
+.result-card p {
+    margin: 0.75rem 0;
+}
+
+@media (min-width: 720px) {
+    .register-form-area {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+    #registerForm {
+        gap: 1rem;
+    }
+    .result-card {
+        padding: 1.5rem;
+    }
+}
