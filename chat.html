@@ -17,6 +17,11 @@
             <a href="profile.html">Profile</a>
             <a href="register.html">Register</a>
         </nav>
+        <div class="header-actions">
+            <button type="button" id="chatResourceBtn" class="header-icon-btn" title="Share Resources">
+                📎 Share
+            </button>
+        </div>
     </header>
 
     <main>
@@ -61,10 +66,17 @@
                     </article>
                 </div>
 
-                <form id="chatForm">
-                    <label for="chatMessage">Send an update</label>
-                    <input id="chatMessage" name="chatMessage" type="text" placeholder="Type your message..." required>
-                    <button type="submit">Send</button>
+                <form id="chatForm" class="chat-form-enhanced">
+                    <div class="chat-input-group">
+                        <label for="chatMessage">Send an update</label>
+                        <textarea id="chatMessage" name="chatMessage" placeholder="Type your message or share resources..." required></textarea>
+                    </div>
+                    <div class="chat-form-actions">
+                        <button type="submit" class="btn-send">Send</button>
+                        <button type="button" id="attachResourceChatBtn" class="btn-attach" title="Share study resource">
+                            📎 Resource
+                        </button>
+                    </div>
                 </form>
             </section>
         </section>
@@ -79,6 +91,30 @@
         </div>
     </div>
 
+    <!-- Chat Resource Share Modal -->
+    <div class="modal" id="chatShareModal" aria-hidden="true">
+        <div class="modal-content modal-large" role="dialog" aria-labelledby="chatShareTitle">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="chatShareTitle">📎 Share Study Resource</h3>
+            
+            <div class="share-search-form">
+                <input type="text" id="chatShareSearchInput" placeholder="Search for study materials to share...">
+                <button type="button" id="chatSearchBtn" class="search-btn">Search</button>
+            </div>
+
+            <div id="chatShareLoading" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Searching resources...</p>
+            </div>
+
+            <div id="chatShareError" class="error-message" style="display: none;"></div>
+
+            <div id="chatShareGrid" class="image-grid"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="image-search.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
