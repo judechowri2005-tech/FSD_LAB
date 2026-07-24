@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Resources - StudyHive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="image-search.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html" class="active">Dashboard</a>
+            <a href="chat.html">Live Chat</a>
+            <a href="profile.html">Profile</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-resources">
+            <div>
+                <h1>Subject Study Resources</h1>
+                <p>Find visual aids, diagrams, and reference materials for your study groups.</p>
+            </div>
+        </section>
+
+        <section class="resources-container">
+            <!-- Subject Tabs -->
+            <div class="subject-tabs">
+                <button class="subject-tab active" data-subject="Advanced Data Structures">
+                    📊 Data Structures
+                </button>
+                <button class="subject-tab" data-subject="Operating Systems II">
+                    🖥️ Operating Systems
+                </button>
+                <button class="subject-tab" data-subject="Algorithms &amp; Complexity">
+                    🔧 Algorithms
+                </button>
+                <button class="subject-tab" data-subject="Machine Learning Systems">
+                    🤖 Machine Learning
+                </button>
+            </div>
+
+            <!-- Subject-Specific Search -->
+            <div class="subject-search-panel">
+                <div class="search-header">
+                    <h2 id="subjectTitle">Advanced Data Structures</h2>
+                    <p id="subjectDescription">Find resources to share with your study group</p>
+                </div>
+
+                <form id="subjectSearchForm" class="search-form">
+                    <div class="search-input-group">
+                        <input 
+                            type="text" 
+                            id="subjectSearchInput" 
+                            placeholder="Search for specific topics, diagrams, or concepts..." 
+                            required
+                        >
+                        <button type="submit" class="search-btn">Search</button>
+                    </div>
+                    
+                    <div class="quick-suggestions">
+                        <span>Quick topics:</span>
+                        <div id="quickTopics" class="topic-tags"></div>
+                    </div>
+                </form>
+
+                <!-- Shared Images Section -->
+                <div class="shared-resources">
+                    <h3>📌 Resources Shared by Your Group</h3>
+                    <div id="sharedImagesList" class="shared-images-grid"></div>
+                    <p id="noShared" style="text-align: center; color: #999; padding: 20px;">
+                        No resources shared yet. Share one to get started!
+                    </p>
+                </div>
+
+                <!-- Search Results -->
+                <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Searching resources...</p>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <div id="imageGrid" class="image-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="shareTitle">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="shareTitle">Share Resource with Group</h3>
+            <div class="share-form">
+                <p id="shareImageInfo"></p>
+                <label for="shareMessage">Add a note for your peers (optional):</label>
+                <textarea id="shareMessage" placeholder="e.g., 'Great diagram for tree rotations!'" rows="3"></textarea>
+                <div class="share-actions">
+                    <button type="button" class="btn-share" id="confirmShareBtn">Share with Group</button>
+                    <button type="button" class="btn-cancel" data-modal-close>Cancel</button>
+                </div>
+                <p id="shareStatus"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="image-search.js"></script>
+    <script src="subject-resources.js"></script>
+</body>
+</html>

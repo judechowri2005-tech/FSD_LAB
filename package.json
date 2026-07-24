@@ -1,0 +1,15 @@
+{
+  "name": "axios-image-search",
+  "version": "1.0.0",
+  "description": "StudyHive - Image Search using Axios",
+  "main": "script.js",
+  "scripts": {
+    "start": "open index.html"
+  },
+  "keywords": ["axios", "image-search", "study"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

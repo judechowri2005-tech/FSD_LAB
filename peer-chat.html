@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHive — Live Chat with Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="peer-chat.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html"><strong>StudyHive</strong></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="subjects.html">Dashboard</a>
+            <a href="chat.html" class="active">Live Chat</a>
+            <a href="image-search.html">Image Search</a>
+            <a href="profile.html">Profile</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-chat">
+            <div>
+                <span class="eyebrow">Study together in real time</span>
+                <h1>Live chat with resource sharing for your study group.</h1>
+                <p>Share images, diagrams, and study materials directly in chat with your peers.</p>
+            </div>
+            <div class="chat-hero-card">
+                <h3>Current Room</h3>
+                <p id="currentRoom">Advanced Data Structures</p>
+                <button type="button" data-modal-target="#rulesModal">Room Rules</button>
+            </div>
+        </section>
+
+        <section class="chat-layout">
+            <aside class="peer-list">
+                <h4>👥 Active Peers</h4>
+                <ul id="peersList">
+                    <li class="peer-active">Jude <span class="peer-badge">(You)</span></li>
+                    <li class="peer-active">Jack</li>
+                    <li class="peer-active">Dean</li>
+                    <li class="peer-active">Amara</li>
+                </ul>
+                
+                <div class="peer-actions">
+                    <h4>🎯 Quick Actions</h4>
+                    <button type="button" id="searchResourcesBtn" class="action-btn">
+                        🔍 Search Resources
+                    </button>
+                    <button type="button" id="shareImageBtn" class="action-btn">
+                        📤 Share Image
+                    </button>
+                    <button type="button" id="viewSharedBtn" class="action-btn">
+                        📌 View Shared
+                    </button>
+                </div>
+
+                <div class="shared-resources-widget">
+                    <h4>📌 Latest Shared</h4>
+                    <div id="recentShared" class="recent-shared-list"></div>
+                </div>
+            </aside>
+
+            <section class="chat-main">
+                <div class="chat-box" id="chatBox" aria-live="polite">
+                    <article class="system-message">
+                        <p>💬 Welcome to Advanced Data Structures study room</p>
+                    </article>
+                    <article>
+                        <small>Dean • 10:14 AM</small>
+                        <p>Hey squad! Did everyone wrap up the balance trees practice sheet yet?</p>
+                    </article>
+                    <article>
+                        <small>Jack • 10:15 AM</small>
+                        <p>Mostly, but I am still hitting walls handling rotations on AVL deletion nodes.</p>
+                    </article>
+                    <article>
+                        <small>You • 10:17 AM</small>
+                        <p>I have a simplified cheat sheet chart on rotations. Pasting the summary logic here now!</p>
+                    </article>
+                </div>
+
+                <form id="chatForm" class="chat-form-enhanced">
+                    <div class="chat-input-wrapper">
+                        <label for="chatMessage">Send a message</label>
+                        <textarea 
+                            id="chatMessage" 
+                            name="chatMessage" 
+                            placeholder="Type your message or paste a resource link..."
+                            rows="2"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="chat-actions">
+                        <button type="submit" class="btn-send">Send</button>
+                        <button type="button" id="attachResourceBtn" class="btn-attach" title="Attach resource image">
+                            📎 Resource
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <!-- Resource Attachment Modal -->
+    <div class="modal" id="resourceModal" aria-hidden="true">
+        <div class="modal-content modal-large" role="dialog" aria-labelledby="resourceTitle">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="resourceTitle">Share Study Resource</h3>
+            
+            <div class="resource-search">
+                <input 
+                    type="text" 
+                    id="resourceSearchInput" 
+                    placeholder="Search for images to share..."
+                    class="resource-input"
+                >
+                <button type="button" id="searchResourcesInModal" class="btn-search-resource">Search</button>
+            </div>
+
+            <div id="resourceGrid" class="resource-grid"></div>
+            <div id="resourceLoading" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Searching...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div class="modal" id="rulesModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="rulesTitle" aria-describedby="rulesDescription">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="rulesTitle">Room Rules</h3>
+            <p id="rulesDescription">Keep updates concise, answer questions respectfully, and share study resources in the pinned notes section.</p>
+            <ul>
+                <li>✅ Share relevant study materials and resources</li>
+                <li>✅ Ask questions and help peers</li>
+                <li>✅ Keep discussions on-topic</li>
+                <li>❌ No spam or promotional content</li>
+                <li>❌ Keep personal information private</li>
+            </ul>
+            <p><button type="button" data-modal-close>Close</button></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="image-search.js"></script>
+    <script src="peer-chat.js"></script>
+</body>
+</html>

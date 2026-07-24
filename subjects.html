@@ -17,6 +17,11 @@
             <a href="profile.html">Profile</a>
             <a href="register.html">Register</a>
         </nav>
+        <div class="header-actions">
+            <button type="button" id="searchResourcesHeaderBtn" class="header-icon-btn" title="Search Study Resources">
+                🔍 Resources
+            </button>
+        </div>
     </header>
 
     <main>
@@ -43,25 +48,37 @@
                 <h2>Advanced Data Structures</h2>
                 <p>Session: Today 7:00 PM</p>
                 <p>Progress: <meter min="0" max="100" value="75">75%</meter></p>
-                <button type="button" data-modal-target="#subjectModal">View details</button>
+                <div class="subject-actions">
+                    <button type="button" data-modal-target="#subjectModal">View details</button>
+                    <button type="button" class="btn-search-subject" data-subject="Advanced Data Structures">📚 Resources</button>
+                </div>
             </article>
             <article>
                 <h2>Operating Systems II</h2>
                 <p>Session: Tomorrow 4:30 PM</p>
                 <p>Progress: <meter min="0" max="100" value="40">40%</meter></p>
-                <button type="button" data-modal-target="#subjectModal">View details</button>
+                <div class="subject-actions">
+                    <button type="button" data-modal-target="#subjectModal">View details</button>
+                    <button type="button" class="btn-search-subject" data-subject="Operating Systems II">📚 Resources</button>
+                </div>
             </article>
             <article>
                 <h2>Algorithms &amp; Complexity</h2>
                 <p>Session: Friday 2:00 PM</p>
                 <p>Progress: <meter min="0" max="100" value="90">90%</meter></p>
-                <button type="button" data-modal-target="#subjectModal">View details</button>
+                <div class="subject-actions">
+                    <button type="button" data-modal-target="#subjectModal">View details</button>
+                    <button type="button" class="btn-search-subject" data-subject="Algorithms &amp; Complexity">📚 Resources</button>
+                </div>
             </article>
             <article>
                 <h2>Machine Learning Systems</h2>
                 <p>Session: Saturday 5:00 PM</p>
                 <p>Progress: <meter min="0" max="100" value="55">55%</meter></p>
-                <button type="button" data-modal-target="#subjectModal">View details</button>
+                <div class="subject-actions">
+                    <button type="button" data-modal-target="#subjectModal">View details</button>
+                    <button type="button" class="btn-search-subject" data-subject="Machine Learning Systems">📚 Resources</button>
+                </div>
             </article>
         </section>
 
@@ -96,6 +113,31 @@
         </div>
     </div>
 
+    <!-- Resource Search Modal -->
+    <div class="modal" id="resourceSearchModal" aria-hidden="true">
+        <div class="modal-content modal-large" role="dialog" aria-labelledby="resourceTitle">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="resourceTitle">📚 Search Study Resources</h3>
+            <p id="resourceSubject"></p>
+            
+            <div class="resource-search-form">
+                <input type="text" id="resourceSearchInput" placeholder="Search for diagrams, tutorials, explanations...">
+                <button type="button" id="resourceSearchBtn" class="search-btn">Search</button>
+            </div>
+
+            <div id="resourceLoadingSpinner" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Finding resources...</p>
+            </div>
+
+            <div id="resourceErrorMsg" class="error-message" style="display: none;"></div>
+
+            <div id="resourceGridModal" class="image-grid"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="image-search.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

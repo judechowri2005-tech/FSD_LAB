@@ -43,10 +43,10 @@
                 <h2>Saved Goal</h2>
                 <p id="savedGoalText">No goal set yet.</p>
             </article>
-            <article class="study-zone-card">
-                <h2>Study zone</h2>
-                <p id="locationStatus">Waiting for your location…</p>
-                <button type="button" id="locateButton">Share my study location</button>
+            <article>
+                <h2>Saved Resources</h2>
+                <p>Study materials you've shared and saved</p>
+                <button type="button" id="viewSavedResourcesBtn">View Saved (0)</button>
             </article>
         </section>
 
@@ -61,6 +61,14 @@
                 <p id="bioPreview">No note saved yet.</p>
             </div>
         </section>
+
+        <section class="saved-resources-section">
+            <h2>📚 My Saved Study Resources</h2>
+            <div id="savedResourcesContainer" class="saved-resources-grid"></div>
+            <p id="noSavedMsg" style="text-align: center; color: #999; padding: 40px;">
+                No resources saved yet. Search and save resources to see them here!
+            </p>
+        </section>
     </main>
 
     <div class="modal" id="locationModal" aria-hidden="true">
@@ -72,6 +80,20 @@
         </div>
     </div>
 
+    <!-- Saved Resources Modal -->
+    <div class="modal" id="savedResourcesModal" aria-hidden="true">
+        <div class="modal-content modal-large" role="dialog" aria-labelledby="savedResourcesTitle">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <h3 id="savedResourcesTitle">📌 All Saved Resources</h3>
+            <div id="allSavedResourcesGrid" class="image-grid"></div>
+            <p id="noResourcesMsg" style="text-align: center; color: #999; padding: 40px;">
+                No resources saved yet.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="image-search.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
